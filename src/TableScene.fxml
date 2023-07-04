@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.control.TableColumn?>
+<AnchorPane id="AnchorPane" prefHeight="442.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TableSceneController">
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+    <children>
+        <TableView fx:id="tableView" layoutX="25.0" layoutY="73.0" prefHeight="310.0" prefWidth="550.0">
+            <columns>
+                <TableColumn text="ID">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="id" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Country">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="country" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="GDP 2010">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="gdp2010" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="GDP 2020">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="gdp2020" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Population 2010">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="population2010" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Population 2020">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="population2020" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="GDP per capita 2010">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="gdpPerCapita2010" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="GDP per capita 2020">
+                    <cellValueFactory>
+                        <javafx.scene.control.cell.PropertyValueFactory property="gdpPerCapita2020" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+
+        <Button fx:id="backButton" layoutX="471.0" layoutY="391.0" mnemonicParsing="false" text="Back to Bar Chart" />
+        <Text layoutX="175.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GDP Comparison Chart">
+            <font>
+                <Font name="System Bold" size="23.0" />
+            </font>
+        </Text>
+    </children>
+</AnchorPane>

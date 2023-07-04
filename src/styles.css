@@ -1,0 +1,55 @@
+/* styles.css */
+
+/* Bar Chart scene */
+#AnchorPane {
+    -fx-background-color: #87CEFA;
+}
+
+#barChart {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+}
+
+#year2010RadioButton, #year2020RadioButton {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+#year2010RadioButton:selected, #year2020RadioButton:selected {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #FFB6C1;
+}
+
+#backButton {
+    -fx-font-size: 14px;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #333333;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+}
+
+#backButton:hover {
+    -fx-background-color: #cccccc;
+}
+
+#backButton {
+    -fx-font-size: 14px;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #333333;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+}
+
+#backButton:hover {
+    -fx-background-color: #cccccc;
+}
+
+.table-view {
+    -fx-background-color: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: #e0e0e0;
+    -fx-font-weight: bold;
+}
