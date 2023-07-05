@@ -14,14 +14,21 @@ public class TableSceneController {
     private TableView<PopulationData> tableView;
     @FXML
     private Button backButton;
-
     private MainApp mainApp;
 
+    /**
+     * Sets the reference to the main application.
+     *
+     * @param mainApp The reference to the main application
+     */
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
         populateTableData();
     }
 
+    /**
+     * Populates the table view with data from the database.
+     */
     private void populateTableData() {
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Comparison_data", "mrnvcode", "Naman@123");
              Statement statement = connection.createStatement();
@@ -50,6 +57,12 @@ public class TableSceneController {
         }
     }
 
+    /**
+     * Parses the population value from the provided string and returns an integer value.
+     *
+     * @param populationString The population value as a string
+     * @return The parsed population as an integer
+     */
     private int parsePopulation(String populationString) {
         // Remove the word 'million' and any whitespace, then parse the remaining value
         String cleanedString = populationString.replaceAll("[^\\d.]", "");
@@ -58,11 +71,18 @@ public class TableSceneController {
         return population;
     }
 
+    /**
+     * Shows the bar chart scene when the button is clicked.
+     */
     @FXML
     private void showBarChartScene() {
         mainApp.showBarChartScene();
     }
 
+    /**
+     * Initializes the controller.
+     * This method is automatically called after the FXML file has been loaded.
+     */
     @FXML
     private void initialize() {
         backButton.setOnAction(event -> showBarChartScene());
@@ -127,7 +147,18 @@ public class TableSceneController {
         tableView.getColumns().addAll(gdp2010Column, gdp2020Column, population2010Column, population2020Column);
     }
 
-    // PopulationData class with overridden toString method
+    /**
+     * The PopulationData class represents data related to population, GDP, and GDP per capita for a specific country.
+     * It provides getter methods to access the data fields.
+     * <p>
+     * The class includes private data fields to store the population data for different years and the associated GDP and GDP per capita values.
+     * <p>
+     * The class defines a constructor that initializes the PopulationData object with the provided data.
+     * <p>
+     * It also provides getter methods for each data field to retrieve the values.
+     * <p>
+     * Overall, the PopulationData class serves as a data model for population-related data, encapsulating the fields and providing access to the data through getter methods.
+     */
     public static class PopulationData {
         private int id;
         private String country;
@@ -138,6 +169,18 @@ public class TableSceneController {
         private double gdpPerCapita2010;
         private double gdpPerCapita2020;
 
+        /**
+         * Constructs a new PopulationData object with the provided data.
+         *
+         * @param id               The ID of the population data
+         * @param country          The name of the country
+         * @param gdp2010          The GDP value for the year 2010
+         * @param gdp2020          The GDP value for the year 2020
+         * @param population2010   The population value for the year 2010
+         * @param population2020   The population value for the year 2020
+         * @param gdpPerCapita2010 The GDP per capita value for the year 2010
+         * @param gdpPerCapita2020 The GDP per capita value for the year 2020
+         */
         public PopulationData(int id, String country, double gdp2010, double gdp2020, int population2010, int population2020,
                               double gdpPerCapita2010, double gdpPerCapita2020) {
             this.id = id;
@@ -150,38 +193,83 @@ public class TableSceneController {
             this.gdpPerCapita2020 = gdpPerCapita2020;
         }
 
+        /**
+         * Returns the ID of the population data.
+         *
+         * @return The ID of the population data
+         */
         public int getId() {
             return id;
         }
 
+        /**
+         * Returns the name of the country.
+         *
+         * @return The name of the country
+         */
         public String getCountry() {
             return country;
         }
 
+        /**
+         * Returns the GDP value for the year 2010.
+         *
+         * @return The GDP value for the year 2010
+         */
         public double getGdp2010() {
             return gdp2010;
         }
 
+        /**
+         * Returns the GDP value for the year 2020.
+         *
+         * @return The GDP value for the year 2020
+         */
         public double getGdp2020() {
             return gdp2020;
         }
 
+        /**
+         * Returns the population value for the year 2010.
+         *
+         * @return The population value for the year 2010
+         */
         public int getPopulation2010() {
             return population2010;
         }
 
+        /**
+         * Returns the population value for the year 2020.
+         *
+         * @return The population value for the year 2020
+         */
         public int getPopulation2020() {
             return population2020;
         }
 
+        /**
+         * Returns the GDP per capita value for the year 2010.
+         *
+         * @return The GDP per capita value for the year 2010
+         */
         public double getGdpPerCapita2010() {
             return gdpPerCapita2010;
         }
 
+        /**
+         * Returns the GDP per capita value for the year 2020.
+         *
+         * @return The GDP per capita value for the year 2020
+         */
         public double getGdpPerCapita2020() {
             return gdpPerCapita2020;
         }
 
+        /**
+         * Returns a string representation of the PopulationData object.
+         *
+         * @return A string representation of the PopulationData object
+         */
         @Override
         public String toString() {
             return String.format("PopulationData [id=%d, country=%s, gdp2010=%.2f, gdp2020=%.2f, population2010=%,d, population2020=%,d, gdpPerCapita2010=%.2f, gdpPerCapita2020=%.2f]",

@@ -1,55 +1,56 @@
 /* styles.css */
 
 /* Bar Chart scene */
+
 #AnchorPane {
-    -fx-background-color: #87CEFA;
+-fx-background-color: #87CEFA; /* Set the background color of the AnchorPane */
 }
 
 #barChart {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #cccccc;
-    -fx-border-radius: 5px;
+-fx-background-color: #ffffff; /* Set the background color of the BarChart /
+-fx-border-color: #cccccc; / Set the border color of the BarChart /
+-fx-border-radius: 5px; / Set the border radius of the BarChart */
 }
 
 #year2010RadioButton, #year2020RadioButton {
-    -fx-font-size: 14px;
-    -fx-text-fill: #333333;
+-fx-font-size: 14px; /* Set the font size of the RadioButtons /
+-fx-text-fill: #333333; / Set the text color of the RadioButtons */
 }
 
 #year2010RadioButton:selected, #year2020RadioButton:selected {
-    -fx-text-fill: #ffffff;
-    -fx-background-color: #FFB6C1;
+-fx-text-fill: #ffffff; /* Set the text color of the selected RadioButtons /
+-fx-background-color: #FFB6C1; / Set the background color of the selected RadioButtons */
 }
 
 #backButton {
-    -fx-font-size: 14px;
-    -fx-background-color: #ffffff;
-    -fx-text-fill: #333333;
-    -fx-border-color: #cccccc;
-    -fx-border-radius: 5px;
+-fx-font-size: 14px; /* Set the font size of the backButton /
+-fx-background-color: #ffffff; / Set the background color of the backButton /
+-fx-text-fill: #333333; / Set the text color of the backButton /
+-fx-border-color: #cccccc; / Set the border color of the backButton /
+-fx-border-radius: 5px; / Set the border radius of the backButton */
 }
 
 #backButton:hover {
-    -fx-background-color: #cccccc;
+-fx-background-color: #cccccc; /* Set the background color of the backButton on hover */
 }
 
 #backButton {
-    -fx-font-size: 14px;
-    -fx-background-color: #ffffff;
-    -fx-text-fill: #333333;
-    -fx-border-color: #cccccc;
-    -fx-border-radius: 5px;
+-fx-font-size: 14px; /* Set the font size of the backButton /
+-fx-background-color: #ffffff; / Set the background color of the backButton /
+-fx-text-fill: #333333; / Set the text color of the backButton /
+-fx-border-color: #cccccc; / Set the border color of the backButton /
+-fx-border-radius: 5px; / Set the border radius of the backButton */
 }
 
 #backButton:hover {
-    -fx-background-color: #cccccc;
+-fx-background-color: #cccccc; /* Set the background color of the backButton on hover */
 }
 
 .table-view {
-    -fx-background-color: white;
+-fx-background-color: white; /* Set the background color of the TableView */
 }
 
 .table-view .column-header {
-    -fx-background-color: #e0e0e0;
-    -fx-font-weight: bold;
+-fx-background-color: #e0e0e0; /* Set the background color of the column headers in the TableView /
+-fx-font-weight: bold; / Set the font weight of the column headers in the TableView */
 }

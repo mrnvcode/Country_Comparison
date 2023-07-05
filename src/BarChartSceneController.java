@@ -15,18 +15,17 @@ import java.util.List;
 
 public class BarChartSceneController {
     @FXML
-    private RadioButton year2010RadioButton;
+    private RadioButton year2010RadioButton; // RadioButton for selecting the year 2010
     @FXML
-    private RadioButton year2020RadioButton;
+    private RadioButton year2020RadioButton; // RadioButton for selecting the year 2020
     @FXML
-    private BarChart<String, Number> barChart;
+    private BarChart<String, Number> barChart; // BarChart for displaying GDP data
     @FXML
-    private CategoryAxis xAxis;
+    private CategoryAxis xAxis; // X-axis of the BarChart
     @FXML
-    private NumberAxis yAxis;
-
-    private MainApp mainApp;
-    private ToggleGroup toggleGroup;
+    private NumberAxis yAxis; // Y-axis of the BarChart
+    private MainApp mainApp; // Reference to the main application
+    private ToggleGroup toggleGroup; // ToggleGroup for the RadioButtons
 
     @FXML
     private void initialize() {
@@ -45,9 +44,9 @@ public class BarChartSceneController {
     @FXML
     private void handleYearRadioButtonChange() {
         if (toggleGroup.getSelectedToggle() == year2010RadioButton) {
-            displayGDPBarChart("GDP_2010");
+            displayGDPBarChart("GDP_2010"); // Display the GDP data for the year 2010
         } else if (toggleGroup.getSelectedToggle() == year2020RadioButton) {
-            displayGDPBarChart("GDP_2020");
+            displayGDPBarChart("GDP_2020"); // Display the GDP data for the year 2020
         }
     }
 
@@ -68,8 +67,8 @@ public class BarChartSceneController {
             Collections.sort(gdpDataList, Comparator.comparingDouble(GDPData::getGdp).reversed());
 
             barChart.getData().clear();
-            xAxis.setLabel("Country");
-            yAxis.setLabel("GDP");
+            xAxis.setLabel("Country"); // Set the label for the X-axis
+            yAxis.setLabel("GDP"); // Set the label for the Y-axis
 
             XYChart.Series<String, Number> series = new XYChart.Series<>();
 
@@ -77,7 +76,7 @@ public class BarChartSceneController {
                 series.getData().add(new XYChart.Data<>(data.getCountry(), data.getGdp()));
             }
 
-            barChart.getData().add(series);
+            barChart.getData().add(series); // Add the series to the BarChart
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -85,14 +84,13 @@ public class BarChartSceneController {
 
     @FXML
     private void showTableScene() {
-        mainApp.showTableScene();
+        mainApp.showTableScene(); // Switch to the TableScene
     }
 }
 
 class GDPData {
     private String country;
     private double gdp;
-
     public GDPData(String country, double gdp) {
         this.country = country;
         this.gdp = gdp;
